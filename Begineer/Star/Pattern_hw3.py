@@ -77,10 +77,38 @@ n = 5
 #         y += 1
 #     print("")
 
-# 1          ------------------------------------------ incomplete
+# 1
 # 3 2
 # 6 5 4
 # 10 9 8 7 
+
+# n = 4
+# y = 1
+# for i in range(1,n+1):
+
+#     temp = y + i - 1
+
+#     for j in range(1, i+1):
+#         print(temp, end=" ")
+#         temp -= 1
+
+#     y += i
+#     print()
+
+# 1
+# 2 1
+# 3 2 1
+# 4 3 2 1
+# 5 4 3 2 1
+
+# y = 1
+# for i in range(1,n+1):
+#     for j in range(1, i+1):
+#         print(y, end="")
+#         y -= 1
+    
+#     y += i + 1
+#     print("")
 
 # y = 1
 # for i in range(1, n+1):
