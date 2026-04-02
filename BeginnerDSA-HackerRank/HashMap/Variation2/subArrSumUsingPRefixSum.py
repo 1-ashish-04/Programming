@@ -10,25 +10,45 @@ a = [10, 40, 10 , 10,  80, -10, 10, 50, 10, 60, 10]
 #                         print(a[k], end=" ")
 #                 print()
 
-h = {}
-h[0] = 0
+# h = {}
+# h[0] = 0
+# k = 70
+# sum = 0
+# x = 1
+# mark = 0
+
+# for i in a:
+#     sum += i
+#     if ((sum - k) in  h.values()):   # prefixSum[current] - prefixSum[alreadyPresent in Hashmap] == k
+#           print("True" )
+#           mark = 1
+#           break
+#     else:
+#           h[x] = sum
+#           x += 1
+# if (mark == 0):
+#      print("False")
+# print(a)
+# print(h)
+
+
+# Using hashSet
+
+s = {0}
 k = 70
 sum = 0
-x = 1
-mark = 0
+mark = "False"
 
 for i in a:
     sum += i
-    if ((sum - k) in  h.values()):   # prefixSum[current] - prefixSum[alreadyPresent in Hashmap] == k
-          print("True" )
-          mark = 1
+    if ((sum - k) in  s):   # prefixSum[current] - prefixSum[alreadyPresent in Hashmap] == k
+          mark = "True"
           break
-    else:
-          h[x] = sum
-          x += 1
-if (mark == 0):
-     print("False")
+    
+    s.add(sum)
+
+print(mark)
 print(a)
-print(h)
+print(s)
 
 
