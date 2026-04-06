@@ -1,3 +1,5 @@
+# Kadane's Algorithm ->  to find maximum sum of the subarray
+
 a = [10, 20 , 10, -500, 10, 15 , -10, 10]
 
 # a = [-100, 10, 20, 30, -500, 100, 10, -20, 10 ,10]
