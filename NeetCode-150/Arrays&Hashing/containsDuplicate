@@ -1,0 +1,7 @@
+a = [1,4,6,3,4]
+h = {}
+for i in a:
+    if i in h.keys():
+        print(True)
+        break
+    h[i] = 0
