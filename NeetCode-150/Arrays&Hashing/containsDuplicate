@@ -1,7 +1,15 @@
+# Contains Duplicate
+
+# Given an integer array nums, return true if any value appears more than once in the array, otherwise return false.
+
 a = [1,4,6,3,4]
-h = {}
-for i in a:
-    if i in h.keys():
-        print(True)
-        break
-    h[i] = 0
+
+def containDuplicate(a):
+    h = {}
+    for i in a:
+        if i in h.keys():
+            return True
+        h[i] = 0
+    return False
+
+print(containDuplicate(a))
