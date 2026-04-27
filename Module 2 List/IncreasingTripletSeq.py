@@ -16,8 +16,8 @@ def incTripSeq(nums):
     for i in range(len(nums)-2, -1, -1): # then comparing maximum value to the remaining index
         suf[i] = max(suf[i+1], nums[i])
 
-    for i in range(len(nums)):
-        if i > pre[i] and i < suf[i]: # check triplet sequ such that -> current value present in nums (arr) greater then the value present in pre[i] (prefix arr of the current index) and less then value present in suf[i] (suffix arr of the current index) 
+    for i in range(1, len(nums)-1):
+        if i > pre[i-1] and i < suf[i+1]: # check triplet seq such that -> current value present in nums (arr) greater then the value present in pre[i-1] (prefix arr of the current index -1 [one previous index]) and less then value present in suf[i+1] (suffix arr of the current index+1 [one next index]) 
             return True
     return False
 
