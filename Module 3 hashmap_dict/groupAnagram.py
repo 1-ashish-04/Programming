@@ -27,3 +27,15 @@ def groupAnagrams(strs):
     return list(h.values()) # all values of hashmap return as a list
 
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+
+def groupAnagrams2(strs):
+    h = {}
+    for i in strs:
+        temp = "".join(sorted(i))
+        if temp in h:
+            h[temp].append(i)
+        else:
+            h[temp] = [i]
+    return list(h.values())
+
+print(groupAnagrams2(["eat","tea","tan","ate","nat","bat"]))
