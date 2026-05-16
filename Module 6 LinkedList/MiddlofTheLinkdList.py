@@ -32,6 +32,7 @@ class Solution:
             count += 1
             if count == length:
                 l = head
+                break
             head = head.next
         
         while(l):
