@@ -1,0 +1,48 @@
+# Check if Array is Good
+
+# You are given an integer array nums. We consider an array good if it is a permutation of an array base[n].
+
+# base[n] = [1, 2, ..., n - 1, n, n] (in other words, it is an array of length n + 1 which contains 1 to n - 1 exactly once, plus two occurrences of n). For example, base[1] = [1, 1] and base[3] = [1, 2, 3, 3].
+
+# Return true if the given array is good, otherwise return false.
+
+# Note: A permutation of integers represents an arrangement of these numbers.
+
+ 
+
+# Example 1:
+
+# Input: nums = [2, 1, 3]
+# Output: false
+# Explanation: Since the maximum element of the array is 3, the only candidate n for which this array could be a permutation of base[n], is n = 3. However, base[3] has four elements but array nums has three. Therefore, it can not be a permutation of base[3] = [1, 2, 3, 3]. So the answer is false.
+
+# Example 2:
+
+# Input: nums = [1, 3, 3, 2]
+# Output: true
+# Explanation: Since the maximum element of the array is 3, the only candidate n for which this array could be a permutation of base[n], is n = 3. It can be seen that nums is a permutation of base[3] = [1, 2, 3, 3] (by swapping the second and fourth elements in nums, we reach base[3]). Therefore, the answer is true.
+
+class Solution:
+    def isGood(Self, nums):
+        m = max(nums)
+        if len(nums) != m+1:
+            return False
+
+        nums.sort()
+        h = {}
+        for i in nums:
+            if i in h:
+                h[i] += 1
+            else:
+                h[i] = 1
+    
+        for i in h:
+            if i == m and h[i] == 2:
+                return True
+            elif h[i] != 1:
+                return False
+        return False
+        
+
+s= Solution()
+print(s.isGood([1,3,3,2]))
